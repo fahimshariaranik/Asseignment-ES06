@@ -77,8 +77,18 @@ allDetails.innerHTML=`
 document.getElementById("my_modal_5").showModal()
 
  }
+// button all alert
+const allbtnCall=()=>{
+    const allBtn=document.querySelectorAll(".allBtn")
+    allBtn.forEach((btn)=>{
+        btn.addEventListener("click", function() {
+             alert("banana Trees has been added the card");
+        });
+    });
+}
 
-//  btn called
+
+//  btn card create
 
 
  const displayCard=(cards)=>{
@@ -100,7 +110,7 @@ document.getElementById("my_modal_5").showModal()
      <h3 class="text-xl font-semibold"><span class=" text-md font-semibold  font-mono">৳</span>${cards.price}</h3> 
 </div>
 <div class="flex mt-auto items-baseline">
-<button id="allBtn" class="btn bg-[#15803d] text-white w-full mt-auto rounded-3xl shadow-lg">Add to Cart</button></div>
+<button id="" class="allBtn btn bg-[#15803d] text-white w-full mt-auto rounded-3xl shadow-lg">Add to Cart</button></div>
 </div>
 
         
@@ -108,9 +118,11 @@ document.getElementById("my_modal_5").showModal()
        cardContainer.appendChild(createCard);
     })
     
-        
+      allbtnCall()  
 
  }
+
+
 
 
 
