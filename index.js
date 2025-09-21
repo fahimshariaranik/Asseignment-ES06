@@ -8,7 +8,7 @@ const catagorisLabel=(id)=>{
 
 const displayLable=(lessons)=>{
 const lableContaoner=document.getElementById("Catagories-label")
-lableContaoner.innerHTML="";
+lableContaoner.innerHTML=" ";
 for( let lesson of lessons){
     const createDiv=document.createElement("div")
     createDiv.innerHTML=`
@@ -81,9 +81,15 @@ document.getElementById("my_modal_5").showModal()
 const allbtnCall=()=>{
     const allBtn=document.querySelectorAll(".allBtn")
     allBtn.forEach((btn)=>{
-        btn.addEventListener("click", function() {
-             alert("banana Trees has been added the card");
+        btn.addEventListener("click", function(id) {
+            fetch(`https://openapi.programming-hero.com/api/plant/1${id}`)
+.then(res=>res.json())
+.then(data=>console.log(data.plants)
+)
+
+             alert(`${id.name}, has been added the card`);
         });
+        
     });
 }
 
@@ -93,7 +99,7 @@ const allbtnCall=()=>{
 
  const displayCard=(cards)=>{
     const cardContainer=document.getElementById("card-container")
-    cardContainer.innerHTML="";
+    cardContainer.innerHTML=" ";
    cards.forEach(cards=>{
        const createCard = document.createElement("div")
         createCard.innerHTML=`
